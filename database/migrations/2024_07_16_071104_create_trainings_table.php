@@ -10,7 +10,7 @@ class CreateTrainingsTable extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('penduduk_id')->constrained()->onDelete('cascade');
+            $table->foreignId('penduduk_id')->constrained('penduduks')->onDelete('cascade');
             $table->boolean('ada_tempat_berteduh_tetap')->nullable();
             $table->boolean('krt_bekerja')->nullable();
             $table->boolean('pernah_khawatir_makan')->nullable();
@@ -30,4 +30,3 @@ class CreateTrainingsTable extends Migration
         Schema::dropIfExists('trainings');
     }
 }
-
