@@ -63,8 +63,7 @@
         <a href="{{ route('penduduk.index') }}">Data Penduduk</a>
         <a href="{{ route('trainings.index') }}">Data Training</a>
         <a href="#">Data Uji</a>
-        <a href="#">Data Uji</a>
-        <a href="#">Data Uji</a>
+        <a href="#">Jenis Bantuan</a>
     </div>
     <div class="content">
         <nav class="navbar navbar-expand-lg">
