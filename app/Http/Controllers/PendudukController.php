@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penduduk;
+use App\Models\JenisBantuan;
 use Illuminate\Http\Request;
 
 class PendudukController extends Controller
@@ -15,7 +16,8 @@ class PendudukController extends Controller
 
     public function create()
     {
-        return view('penduduk.create');
+        $jenisBantuans = JenisBantuan::all();
+        return view('penduduk.create', compact('jenisBantuans'));
     }
 
     public function store(Request $request)
@@ -27,11 +29,12 @@ class PendudukController extends Controller
             'alamat' => 'required',
             'rt' => 'required',
             'rw' => 'required',
-            'jenis_bantuan' => 'nullable', // Sesuaikan dengan kebutuhan validasi
+            'jenis_bantuan' => 'nullable|array',
         ]);
 
-
-        Penduduk::create($request->all());
+        $penduduk = Penduduk::create($request->except('jenis_bantuan'));
+        $penduduk->jenis_bantuan = json_encode($request->jenis_bantuan);
+        $penduduk->save();
 
         return redirect()->route('penduduk.index')
             ->with('success', 'Penduduk created successfully.');
@@ -44,7 +47,8 @@ class PendudukController extends Controller
 
     public function edit(Penduduk $penduduk)
     {
-        return view('penduduk.edit', compact('penduduk'));
+        $jenisBantuans = JenisBantuan::all();
+        return view('penduduk.edit', compact('penduduk', 'jenisBantuans'));
     }
 
     public function update(Request $request, Penduduk $penduduk)
@@ -56,16 +60,16 @@ class PendudukController extends Controller
             'alamat' => 'required',
             'rt' => 'required',
             'rw' => 'required',
-            'jenis_bantuan' => 'nullable', // Sesuaikan dengan kebutuhan validasi
+            'jenis_bantuan' => 'nullable|array',
         ]);
 
-        $penduduk->update($request->all());
+        $penduduk->update($request->except('jenis_bantuan'));
+        $penduduk->jenis_bantuan = json_encode($request->jenis_bantuan);
+        $penduduk->save();
 
         return redirect()->route('penduduk.index')
             ->with('success', 'Penduduk updated successfully.');
     }
-
-
 
     public function destroy(Penduduk $penduduk)
     {
