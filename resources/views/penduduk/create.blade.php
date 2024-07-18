@@ -59,7 +59,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="jenis_bantuan" class="form-label">Jenis Bantuan:</label>
-                    <select name="jenis_bantuan[]" id="jenis_bantuan" class="form-control" multiple>
+                    <select name="jenis_bantuan[]" id="jenis_bantuan" class="form-control select2" multiple>
                         @foreach ($jenisBantuans as $jenisBantuan)
                         <option value="{{ $jenisBantuan->nama }}">{{ $jenisBantuan->nama }}</option>
                         @endforeach

@@ -4,53 +4,40 @@
 
 @section('content')
 <div class="container">
-    <h2>Detail Penduduk</h2>
+    <h2 class="my-4">Detail Penduduk</h2>
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>No KK:</strong>
-                {{ $penduduk->nokk }}
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label class="form-label"><strong>No KK:</strong></label>
+                <p class="form-control-static">{{ $penduduk->nokk }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>NIK:</strong>
-                {{ $penduduk->nik }}
+            <div class="mb-3">
+                <label class="form-label"><strong>NIK:</strong></label>
+                <p class="form-control-static">{{ $penduduk->nik }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Nama:</strong>
-                {{ $penduduk->nama }}
+            <div class="mb-3">
+                <label class="form-label"><strong>Nama:</strong></label>
+                <p class="form-control-static">{{ $penduduk->nama }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Alamat:</strong>
-                {{ $penduduk->alamat }}
+            <div class="mb-3">
+                <label class="form-label"><strong>Alamat:</strong></label>
+                <p class="form-control-static">{{ $penduduk->alamat }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>RT:</strong>
-                {{ $penduduk->rt }}
+            <div class="mb-3">
+                <label class="form-label"><strong>RT:</strong></label>
+                <p class="form-control-static">{{ $penduduk->rt }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>RW:</strong>
-                {{ $penduduk->rw }}
+            <div class="mb-3">
+                <label class="form-label"><strong>RW:</strong></label>
+                <p class="form-control-static">{{ $penduduk->rw }}</p>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Jenis Bantuan:</strong>
-                {{ $penduduk->jenis_bantuan }}
+            <div class="mb-3">
+                <label class="form-label"><strong>Jenis Bantuan:</strong></label>
+                <p class="form-control-static">{{ $penduduk->jenis_bantuan }}</p>
             </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('penduduk.index') }}"> Back</a>
+            <div >
+                <a class="btn btn-primary" href="{{ route('penduduk.index') }}">Back</a>
+            </div>
         </div>
     </div>
 </div>
