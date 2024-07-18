@@ -18,6 +18,6 @@ Route::get('/logout', function () {
 
 Route::resource('trainings', TrainingController::class);
 
-Route::resource('jenis_bantuans', JenisBantuanController::class
+Route::resource('jenis_bantuans', JenisBantuanController::class);
 
 

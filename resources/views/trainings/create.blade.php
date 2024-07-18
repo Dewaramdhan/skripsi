@@ -20,7 +20,7 @@
 
         <div class="form-group">
             <label for="penduduk_id">Pilih Penduduk:</label>
-            <select name="penduduk_id" class="form-control">
+            <select name="penduduk_id" class="form-control select2">
                 @foreach ($penduduks as $penduduk)
                     <option value="{{ $penduduk->id }}">{{ $penduduk->nama }}</option>
                 @endforeach
@@ -76,7 +76,8 @@
         </div>
 
         <div class="form-group">
-            <label for="dinding_terbuat_dari_bambu_kawat_kayu">Sebagian besar dinding terbuat dari bambu, kawat, atau kayu:</label>
+            <label for="dinding_terbuat_dari_bambu_kawat_kayu">Sebagian besar dinding terbuat dari bambu, kawat, atau
+                kayu:</label>
             <select name="dinding_terbuat_dari_bambu_kawat_kayu" class="form-control">
                 <option value="1">Ya</option>
                 <option value="0">Tidak</option>
@@ -84,7 +85,8 @@
         </div>
 
         <div class="form-group">
-            <label for="punya_fasilitas_buang_air_sendiri">Rumah tangga memiliki fasilitas buang air kecil/besar sendiri:</label>
+            <label for="punya_fasilitas_buang_air_sendiri">Rumah tangga memiliki fasilitas buang air kecil/besar
+                sendiri:</label>
             <select name="punya_fasilitas_buang_air_sendiri" class="form-control">
                 <option value="1">Ya</option>
                 <option value="0">Tidak</option>
