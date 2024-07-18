@@ -1,6 +1,6 @@
-@extends('layouts.app')
+<!-- resources/views/penduduks/create.blade.php -->
 
-@section('title', 'Tambah Penduduk')
+@extends('layouts.app')
 
 @section('content')
 <div class="container mt-4">
@@ -19,7 +19,7 @@
 
     <form action="{{ route('penduduk.store') }}" method="POST">
         @csrf
-        <div class="row g-3">
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nokk" class="form-label">No KK:</label>
@@ -41,7 +41,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="alamat" class="form-label">Alamat:</label>
-                    <textarea class="form-control" name="alamat" id="alamat" rows="5" placeholder="Alamat" required></textarea>
+                    <textarea class="form-control" style="height:150px" name="alamat" id="alamat" placeholder="Alamat" required></textarea>
                 </div>
             </div>
             <div class="col-md-6">
@@ -59,10 +59,15 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="jenis_bantuan" class="form-label">Jenis Bantuan:</label>
-                    <input type="text" name="jenis_bantuan" id="jenis_bantuan" class="form-control" placeholder="Jenis Bantuan">
+                    <select name="jenis_bantuan[]" id="jenis_bantuan" class="form-control select2" multiple>
+                        @foreach ($jenisBantuans as $jenisBantuan)
+                        <option value="{{ $jenisBantuan->nama }}">{{ $jenisBantuan->nama }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
-            <div class="col-12">
+
+            <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\PendudukController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\JenisBantuanController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,3 +18,5 @@ Route::get('/logout', function () {
 })->name('logout');
 
 Route::resource('trainings', TrainingController::class);
+
+Route::resource('jenis_bantuans', JenisBantuanController::class);
